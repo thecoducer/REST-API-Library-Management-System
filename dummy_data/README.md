@@ -46,7 +46,7 @@ https://docs.google.com/spreadsheets/d/17cnJ7LSDGSBPJsUlVcwPotb_ZUbOiXiI1e9KSBia
 
 ## Periodicals
 Magazines, newspapers and journals all fall under the periodicals category. It's hard to find info about periodicals. So for dummy data purposes you can enter any random name and values to following fields.
-- Add only 15 fifteen data columns
+- Add only fifteen data columns
 - `issn` is 8 digits in length. This is a bigint field in DB so don't enter hyphens. Only digits.
 - `title` 
 - `type` Example: Newspaper/Magazine/Journal
