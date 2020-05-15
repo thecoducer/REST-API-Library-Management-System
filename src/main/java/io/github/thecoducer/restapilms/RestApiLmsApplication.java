@@ -24,7 +24,8 @@ public class RestApiLmsApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(RestApiLmsApplication.class, args);
 	}
-
+	
+	// Swagger Configuration
 	@Bean
 	public Docket swaggerConfiguration() {
 		return new Docket(DocumentationType.SWAGGER_2).select()
@@ -39,9 +40,7 @@ public class RestApiLmsApplication {
 
 	@Bean
 	UiConfiguration uiConfig() {
-		return UiConfigurationBuilder.builder().docExpansion(DocExpansion.LIST) // or DocExpansion.NONE or
-																				// DocExpansion.FULL
-				.build();
+		return UiConfigurationBuilder.builder().docExpansion(DocExpansion.LIST).build();
 	}
-
+	
 }

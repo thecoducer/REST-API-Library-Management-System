@@ -1,0 +1,100 @@
+Table users {
+  user_id int [pk, increment]
+  name varchar
+  role roles [not null]
+  created_at timestamp
+  email varchar
+  password varchar
+}
+
+enum roles {
+  student
+  librarian
+}
+
+Table student {
+  roll_no int [pk]
+  card_id int
+  dob date
+  yoa date
+  year int
+  dept varchar
+  course varchar
+  phone int 
+  address varchar
+  total_fine int
+  user_id int [ref: > users.user_id]
+}
+
+Table mem_status {
+  roll_no int [ref: > student.roll_no]
+  status statuscode
+  expire_on date
+}
+
+enum statuscode {
+  active
+  suspended
+  pending
+}
+
+Table books {
+  isbn bigint [pk]
+  title varchar
+  category varchar
+  pub_date date
+  publisher varchar
+  arrival date
+  copies int
+  price float
+}
+
+Table authors {
+  isbn bigint [ref: > books.isbn]
+  name1 varchar
+  name2 varchar
+  name3 varchar
+}
+
+Table periodicals {
+  issn bigint [pk]
+  title varchar
+  type varchar
+  category varchar
+  pub_date date
+  publisher varchar
+  arrival date
+}
+
+Table bag {
+  roll_no int [ref: > student.roll_no]
+  isbn bigint [ref: > books.isbn]
+  issn bigint [ref: > periodicals.issn]
+  added_on timestamp
+}
+
+Table book_issues {
+  issue_bid int [pk, increment]
+  roll_no int [ref: > student.roll_no]
+  isbn bigint [ref: > books.isbn]
+  issued_on timestamp
+  returned_on timestamp
+  due_on date
+  status issue_status
+}
+
+Table periodical_issues {
+  issue_pid int [pk, increment]
+  roll_no int [ref: > student.roll_no]
+  issn bigint [ref: > periodicals.issn]
+  issued_on timestamp
+  returned_on timestamp
+  due_on date
+  status issue_status
+}
+
+enum issue_status {
+  issued 
+  returned 
+  pending
+}
