@@ -26,6 +26,7 @@ https://docs.google.com/spreadsheets/d/17cnJ7LSDGSBPJsUlVcwPotb_ZUbOiXiI1e9KSBia
 - `address` insert whatever you think it to be the best
 
 ## Books
+- Add only twenty data columns
 - `isbn` can be either 13 or 10 digits. Google a book title and get its ISBN. This is a bigint field in DB so don't enter hyphens. Only digits.
 - `title` is the book title
 - `category` Google book title and get to know its category. The genre also goes into this field. Example: Fiction, Horror or Non-Fiction
@@ -36,6 +37,7 @@ https://docs.google.com/spreadsheets/d/17cnJ7LSDGSBPJsUlVcwPotb_ZUbOiXiI1e9KSBia
 - `price` is float field
 
 ## Authors
+- Add only twenty data columns
 - For each book, fill its corresponding author info here in this table
 - `isbn` field must match the isbn value of that book in `Books`  table for which you're adding author info
 - `name1` Name of first author
@@ -44,6 +46,7 @@ https://docs.google.com/spreadsheets/d/17cnJ7LSDGSBPJsUlVcwPotb_ZUbOiXiI1e9KSBia
 
 ## Periodicals
 Magazines, newspapers and journals all fall under the periodicals category. It's hard to find info about periodicals. So for dummy data purposes you can enter any random name and values to following fields.
+- Add only 15 fifteen data columns
 - `issn` is 8 digits in length. This is a bigint field in DB so don't enter hyphens. Only digits.
 - `title` 
 - `type` Example: Newspaper/Magazine/Journal
