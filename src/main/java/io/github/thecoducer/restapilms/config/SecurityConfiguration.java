@@ -8,9 +8,10 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+
+import io.github.thecoducer.restapilms.services.UserDetailsServiceImpl;
 
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
@@ -19,7 +20,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	DataSource dataSource;
 	
 	@Autowired
-	UserDetailsService userDetailsService;
+	UserDetailsServiceImpl userDetailsService;
 	
 
 	// WebSecurityConfigurerAdapter class in Spring has the configure method
