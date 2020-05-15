@@ -6,6 +6,14 @@ Here is the design of the database.
 ### Google sheets link
 https://docs.google.com/spreadsheets/d/17cnJ7LSDGSBPJsUlVcwPotb_ZUbOiXiI1e9KSBiayPg/edit?usp=sharing
 
+## Users
+- Add only ten data columns.
+- `user_id` have references to student and teacher tables
+- `username` and `password` must have the first name of the user
+- `email` anything that seems valid
+- `fname` stands for full name
+- `authority` must be either *ROLE_STUDENT*, *ROLE_TEACHER* or *ROLE_LIBRARIAN*
+
 ## Student
 - Add only five data columns
 - `roll_no` field must only have digits. It can hold big numbers. You can enter our university roll no too.
