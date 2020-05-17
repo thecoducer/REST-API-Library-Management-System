@@ -55,7 +55,7 @@ CREATE TABLE `teacher` (
 
 CREATE TABLE `items` (
   `item_id` int PRIMARY KEY AUTO_INCREMENT,
-  `deleted` boolean
+  `deleted` boolean DEFAULT false
 );
 
 CREATE TABLE `books` (
@@ -73,9 +73,9 @@ CREATE TABLE `books` (
 CREATE TABLE `authors` (
   `author_id` int PRIMARY KEY AUTO_INCREMENT,
   `isbn` bigint,
-  `name1` varchar(255),
-  `name2` varchar(255),
-  `name3` varchar(255)
+  `name1` varchar(255) NOT NULL,
+  `name2` varchar(255) DEFAULT NULL,
+  `name3` varchar(255) DEFAULT NULL
 );
 
 CREATE TABLE `periodicals` (
