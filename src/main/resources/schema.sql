@@ -1,8 +1,8 @@
 SET FOREIGN_KEY_CHECKS = 0;
 
 DROP TABLE IF EXISTS users;
-DROP TABLE IF EXISTS student;
-DROP TABLE IF EXISTS teacher;
+DROP TABLE IF EXISTS students;
+DROP TABLE IF EXISTS teachers;
 DROP TABLE IF EXISTS authors;
 DROP TABLE IF EXISTS periodicals;
 DROP TABLE IF EXISTS bag;
@@ -23,7 +23,7 @@ CREATE TABLE `users` (
   `enabled` boolean NOT NULL DEFAULT true
 );
 
-CREATE TABLE `student` (
+CREATE TABLE `students` (
   `user_id` int,
   `roll_no` bigint PRIMARY KEY,
   `card_id` varchar(255),
@@ -39,7 +39,7 @@ CREATE TABLE `student` (
   `total_items` int
 );
 
-CREATE TABLE `teacher` (
+CREATE TABLE `teachers` (
   `user_id` int,
   `tid` int PRIMARY KEY AUTO_INCREMENT,
   `card_id` varchar(255),
@@ -108,9 +108,9 @@ CREATE TABLE `issues` (
   `status` ENUM ('issued', 'returned') DEFAULT "issued"
 );
 
-ALTER TABLE `student` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
+ALTER TABLE `students` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
 
-ALTER TABLE `teacher` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
+ALTER TABLE `teachers` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
 
 ALTER TABLE `books` ADD FOREIGN KEY (`item_id`) REFERENCES `items` (`item_id`);
 

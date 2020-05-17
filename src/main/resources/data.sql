@@ -4,9 +4,43 @@
 -------------------------------------------
 */
 
-INSERT INTO users(username, email, password, fname, created_at, authority) VALUES ("mayukh", "mayukh5741@gmail.com", "$2a$10$.e7lgarn7kp8GsgJJvEv9.0KATw3KLTZxrKjzgEbUbEAnpupphQA2", "Mayukh Datta", "2020-05-13 02:22:21", "ROLE_LIBRARIAN");
-INSERT INTO users(username, email, password, fname, created_at, authority) VALUES ("abdul", "abdul@gmail.com", "$2a$10$yxLgX2XbwZk2T3OEK/GNz.XIJZ2SBKOCEY/RTL82Qidg8a/iOe5be", "Abdul Aziz", "2020-05-14 05:10:21", "ROLE_TEACHER");
-INSERT INTO users(username, email, password, fname, created_at, authority) VALUES ("shreya", "shreya@gmail.com", "$2a$10$tN0S2wTihjwSdOGWtuUxpeyxBC3CovmxxLCRly.HahViTH5/mVZ0e", "Shreya Sen", "2020-05-18 02:22:21", "ROLE_STUDENT");
+INSERT INTO users(username,email,password,fname,created_at,authority) VALUES ('komal','komal@gmail.com','$2a$10$sECcNcUc5OoGzU3QHZVXOOadlB3r3w83hQQdJRP42l8Ah6o0Zg1V2','Komal Singh', '2020-05-13 02:22:21', 'ROLE_STUDENT');
+INSERT INTO users(username,email,password,fname,created_at,authority) VALUES ('sanjay','sanjay@gmail.com','$2a$10$mSTm8TRFTE5Gv4p7VYufd.rfUR2F5CWPVaiZw6QBNmpZZwnTkdh7C','Sanjay Roy', '2020-05-13 02:22:21', 'ROLE_STUDENT');
+INSERT INTO users(username,email,password,fname,created_at,authority) VALUES ('aamir','aamir@gmail.com','$2a$10$P3FTeAMLMBZF9EJfiYqbmezBBCVhVSwWX6PeV1SNqs3EwMhrSVRNW','Aamir Aziz', '2020-05-13 02:22:21', 'ROLE_STUDENT');
+INSERT INTO users(username,email,password,fname,created_at,authority) VALUES ('esha25','esha@gmail.com','$2a$10$lv0Zt7GrCq0TTbsXFwGJuen4Tryt705jxUULH/rjkffXIEudjev9S','Esha Ghosh', '2020-05-13 02:22:21', 'ROLE_STUDENT');
+INSERT INTO users(username,email,password,fname,created_at,authority,enabled) VALUES ('sunil','sunil@gmail.com','$2a$10$l2iO5xxgzWl.nSc1QFaJKeT3osu1X9IJyYghORuuaHDnYVAD9ZaN.','Sunil Banerjee', '2020-05-13 02:22:21', 'ROLE_STUDENT',false);
+INSERT INTO users(username,email,password,fname,created_at,authority) VALUES ('zeeshan','zeeshan@gmail.com','$2a$10$/99aAlQlcuoebAFSkIKcW.q8lFqUdMcfzkh9p9pcd/kRi7moNPWLu','Zeeshan Malik', '2020-05-13 02:22:21', 'ROLE_TEACHER');
+INSERT INTO users(username,email,password,fname,created_at,authority) VALUES ('lisa','lisa@gmail.com','$2a$10$svGC/6R.S0PAcNQBV8Xmz.4N0m3/Rag2a5wrXujOtNxb993jnQ9b2','Lisa Waters', '2020-05-13 02:22:21', 'ROLE_TEACHER');
+INSERT INTO users(username,email,password,fname,created_at,authority) VALUES ('santanu','santanu@gmail.com','$2a$10$YwX3me7yCgy7HggYe.vHq.iBPhJYG7OTQNJf38GiBXgh9NPA865de','Santanu Mukherjee', '2020-05-13 02:22:21', 'ROLE_TEACHER');
+INSERT INTO users(username,email,password,fname,created_at,authority,enabled) VALUES ('moumita','moumita@gmail.com','$2a$10$MhcBbV7w60Mx/sk4whe6MuQZwnuTRf7Gyhsrbb0Jp5czA4XIfUsae','Moumita Ghosh', '2020-05-13 02:22:21', 'ROLE_TEACHER',false);
+INSERT INTO users(username,email,password,fname,created_at,authority) VALUES ('madhura969','madhura@gmail.com','$2a$10$yE02XHuMS.b0sm1ZpvcqN.7CmDzinlnN5oyaM5p1NYoWHVjHu2HKi','Madhura Sengupta', '2020-05-13 02:22:21', 'ROLE_TEACHER');
+INSERT INTO users(username, email, password, fname, created_at, authority) VALUES ('mayukh', 'mayukh5741@gmail.com', '$2a$10$.e7lgarn7kp8GsgJJvEv9.0KATw3KLTZxrKjzgEbUbEAnpupphQA2', 'Mayukh Datta', '2020-05-13 02:22:21', 'ROLE_LIBRARIAN');
+INSERT INTO users(username, email, password, fname, created_at, authority) VALUES ('koumik', 'koumik@gmail.com', '$2a$10$qF3UV683/.BTfVZNnwPYEOBx/9t.wIQFhxc9F60MuXoUIBqF6n1Ei', 'Koumik Dasgupta', '2020-05-13 02:22:21', 'ROLE_LIBRARIAN');
+
+/* 
+-------------------------------------------
+--------------Table: students--------------
+-------------------------------------------
+*/
+
+INSERT INTO students(user_id,roll_no,dob,yoa,year,dept,course,phone,address) VALUES (1,16800116001,'1997-02-15','2016-07-28',4,'Computer Science and Engineering','BTech',9373305080,'H.D Road, Delhi');
+INSERT INTO students(user_id,roll_no,dob,yoa,year,dept,course,phone,address) VALUES (2,16800117023,'1998-04-03','2017-07-29',3,'Electronics and Communication Engineering','BTech',9439519465,'76, Deep Building, Kolkata');
+INSERT INTO students(user_id,roll_no,dob,yoa,year,dept,course,phone,address) VALUES (3,16800118012,'1997-05-04','2017-07-30',3,'Information Technology','BTech',9438248871,'M House, Tana Street, Chennai');
+INSERT INTO students(user_id,roll_no,dob,yoa,year,dept,course,phone,address) VALUES (4,16800116045,'1997-12-16','2016-07-23',4,'Electronics and Communication Engineering','BTech',9726228735,'A-5, Shalimar Road, Patna');
+INSERT INTO students(user_id,roll_no,dob,yoa,year,dept,course,phone,address) VALUES (5,16800119011,'1996-09-07','2018-08-01',2,'Computer Science and Engineering','MTech',9718029217,'J K Society, H Nagar, Kolkata');
+
+/* 
+-------------------------------------------
+--------------Table: teachers--------------
+-------------------------------------------
+*/
+
+INSERT INTO teachers(user_id,dob,yoap,dept,phone,address) VALUES (6,'1994-10-03','2016-07-27','Computer Science and Engineering',8119745402,'90, R J Nagar, Delhi');
+INSERT INTO teachers(user_id,dob,yoap,dept,phone,address) VALUES (7,'1994-07-12','2015-11-04','Electronics and Communication Engineering',9381273596,'H 186/3, P Street, Kolkata');
+INSERT INTO teachers(user_id,dob,yoap,dept,phone,address) VALUES (8,'1995-03-02','2015-10-20','Computer Science and Engineering',9122513511,'31/1, M.S Lane, Bangalore');
+INSERT INTO teachers(user_id,dob,yoap,dept,phone,address) VALUES (9,'1995-02-04','2016-05-17','Mechanical Engineering',8441701930,'109, Kaked East, Kolkata');
+INSERT INTO teachers(user_id,dob,yoap,dept,phone,address) VALUES (10,'1995-07-24','2016-08-03','Information Technology',9933399459,'A-134, S. K Nagar, Kolkata');
+
 
 /* 
 -------------------------------------------
