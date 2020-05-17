@@ -30,8 +30,6 @@ public class UserDetailsObj implements UserDetails{
 		this.createdAt = user.getCreatedAt();
 		this.authority = Arrays.asList((new SimpleGrantedAuthority(user.getAuthority())));
 		this.enabled = user.isEnabled();
-		
-		System.out.println("gggggg" + new SimpleGrantedAuthority(user.getAuthority()));
 	}
 	
 
@@ -68,6 +66,13 @@ public class UserDetailsObj implements UserDetails{
 	@Override
 	public boolean isEnabled() {
 		return enabled;
+	}
+
+	@Override
+	public String toString() {
+		return "UserDetailsObj [userId=" + userId + ", userName=" + userName + ", email=" + email + ", password="
+				+ password + ", fullName=" + fullName + ", createdAt=" + createdAt + ", authority=" + authority
+				+ ", enabled=" + enabled + "]";
 	}
 
 }

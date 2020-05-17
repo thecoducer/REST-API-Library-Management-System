@@ -102,5 +102,12 @@ public class Users {
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 	}
+
+	@Override
+	public String toString() {
+		return "Users [userId=" + userId + ", userName=" + userName + ", email=" + email + ", password=" + password
+				+ ", fullName=" + fullName + ", createdAt=" + createdAt + ", authority=" + authority + ", enabled="
+				+ enabled + "]";
+	}
 	
 }

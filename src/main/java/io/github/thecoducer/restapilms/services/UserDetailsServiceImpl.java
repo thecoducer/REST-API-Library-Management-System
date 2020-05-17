@@ -22,9 +22,12 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
 		Optional<Users> user = userRepository.findByUserName(userName);
 		
+		System.out.println("Logged in user details: \n" + user + "\n");
+		
 		user.orElseThrow(() -> new UsernameNotFoundException("Not found" + userName));
 		
 		return user.map(UserDetailsObj::new).get();
+				
 	}
 	
 }

@@ -1,7 +1,5 @@
 package io.github.thecoducer.restapilms.controllers;
 
-import java.security.Principal;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -14,8 +12,7 @@ public class HomeController {
 	}
 	
 	@GetMapping("/student")
-	public String student(Principal p) {
-		System.out.println(p);
+	public String student() {
 		return ("<h1>Student</h1>");
 	}
 	
