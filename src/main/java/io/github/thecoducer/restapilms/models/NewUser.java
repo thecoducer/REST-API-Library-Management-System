@@ -6,7 +6,6 @@ public class NewUser {
 	private String email;
 	private String password;
 	private String fullName;
-	private String createdAt;
 	private String authority;
 	
 	
@@ -34,12 +33,6 @@ public class NewUser {
 	public void setFullName(String fullName) {
 		this.fullName = fullName;
 	}
-	public String getCreatedAt() {
-		return createdAt;
-	}
-	public void setCreatedAt(String createdAt) {
-		this.createdAt = createdAt;
-	}
 	public String getAuthority() {
 		return authority;
 	}
@@ -50,7 +43,7 @@ public class NewUser {
 	@Override
 	public String toString() {
 		return "NewUser [userName=" + userName + ", email=" + email + ", password=" + password + ", fullName="
-				+ fullName + ", createdAt=" + createdAt + ", authority=" + authority + "]";
+				+ fullName + ", authority=" + authority + "]";
 	}
 	
 }

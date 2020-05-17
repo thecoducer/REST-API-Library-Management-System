@@ -28,7 +28,7 @@ public class Users {
 	private String fullName;
 	
 	@Column(name = "created_at")
-	private Timestamp createdAt;
+	private String createdAt;
 	
 	private enum Authority {
 		ROLE_STUDENT, ROLE_TEACHER, ROLE_LIBRARIAN;
@@ -36,6 +36,7 @@ public class Users {
 	@Enumerated(EnumType.STRING)
 	private Authority authority;
 	
+	@Column(name = "enabled")
 	private boolean enabled;
 	
 
@@ -79,11 +80,11 @@ public class Users {
 		this.fullName = fullName;
 	}
 
-	public Timestamp getCreatedAt() {
+	public String getCreatedAt() {
 		return createdAt;
 	}
 
-	public void setCreatedAt(Timestamp createdAt) {
+	public void setCreatedAt(String createdAt) {
 		this.createdAt = createdAt;
 	}
 

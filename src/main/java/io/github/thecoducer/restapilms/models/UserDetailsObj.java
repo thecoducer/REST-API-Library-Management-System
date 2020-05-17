@@ -16,7 +16,7 @@ public class UserDetailsObj implements UserDetails{
 	private String email;
 	private String password;
 	private String fullName;
-	private Timestamp createdAt;
+	private String createdAt;
 	private List<GrantedAuthority> authority;
 	
 	private boolean enabled;

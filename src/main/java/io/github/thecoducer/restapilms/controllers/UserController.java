@@ -7,6 +7,8 @@ import java.util.TreeMap;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,18 +19,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 import io.github.thecoducer.restapilms.models.NewUser;
 import io.github.thecoducer.restapilms.models.Users;
+import io.github.thecoducer.restapilms.services.UserService;
 
 @RestController
 public class UserController {
 	
-//	@Autowired
-//	UserService userService;
+	@Autowired
+	UserService userService;
 	
 	@GetMapping("/getcurrentuser")
-	public Map<String, String> getUser(Principal currentUser) {
+	public ResponseEntity<Map<String, String>> getUser(Principal currentUser) {
 		Map<String, String> userInfo = new TreeMap<>();
 		userInfo.put("User info", currentUser.toString());
-		return userInfo;
+		
+		return new ResponseEntity<Map<String, String>>(userInfo, HttpStatus.OK);
 	}
 	
 	@GetMapping("/getcsrftoken")
@@ -38,9 +42,8 @@ public class UserController {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/register")
-	public void addNewUser(@RequestBody NewUser newUser) {
-//		userService.addUser(newUser);
-		System.out.println(newUser);
+	public ResponseEntity<Map<String, String>> addNewUser(@RequestBody NewUser newUser) {
+		return userService.createNewUser(newUser);
 	}
 	
 }
