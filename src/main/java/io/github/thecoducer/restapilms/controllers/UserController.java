@@ -22,6 +22,7 @@ import io.github.thecoducer.restapilms.models.Users;
 import io.github.thecoducer.restapilms.services.UserService;
 
 @RestController
+@RequestMapping("/v1/")
 public class UserController {
 	
 	@Autowired
@@ -42,7 +43,7 @@ public class UserController {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/register")
-	public ResponseEntity<Map<String, String>> addNewUser(@RequestBody NewUser newUser) {
+	public ResponseEntity<Map<String, String>> createNewUser(@RequestBody NewUser newUser) {
 		return userService.createNewUser(newUser);
 	}
 	
