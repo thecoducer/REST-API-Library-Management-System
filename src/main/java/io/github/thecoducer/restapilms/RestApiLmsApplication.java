@@ -37,7 +37,7 @@ public class RestApiLmsApplication {
 	}
 
 	private ApiInfo apiInfo() {
-		return new ApiInfo("Library Manager API", "REST API for Library Management System", "v1", "",
+		return new ApiInfo("RESTful Library Manager", "REST API for Library Management System", "v1", "",
 				new Contact("", "", ""), "", "", Collections.emptyList());
 	}
 

@@ -20,9 +20,12 @@ import org.springframework.web.bind.annotation.RestController;
 import io.github.thecoducer.restapilms.models.NewUser;
 import io.github.thecoducer.restapilms.models.Users;
 import io.github.thecoducer.restapilms.services.UserService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping("/v1/")
+@Api(tags = "Accessible to any user")
 public class UserController {
 	
 	@Autowired
