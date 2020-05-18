@@ -33,7 +33,7 @@ public class RestApiLmsApplication {
 	public Docket swaggerConfiguration() {
 		return new Docket(DocumentationType.SWAGGER_2).select()
 				.apis(RequestHandlerSelectors.basePackage("io.github.thecoducer.restapilms")).paths(PathSelectors.any())
-				.build().apiInfo(apiInfo());
+				.build().apiInfo(apiInfo()).useDefaultResponseMessages(false);
 	}
 
 	private ApiInfo apiInfo() {
