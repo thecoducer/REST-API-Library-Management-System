@@ -23,11 +23,12 @@ INSERT INTO users(username, email, password, fname, created_at, authority) VALUE
 -------------------------------------------
 */
 
-INSERT INTO students(user_id,roll_no,dob,yoa,year,dept,course,phone,address) VALUES (1,16800116001,'1997-02-15','2016-07-28',4,'Computer Science and Engineering','BTech',9373305080,'H.D Road, Delhi');
-INSERT INTO students(user_id,roll_no,dob,yoa,year,dept,course,phone,address) VALUES (2,16800117023,'1998-04-03','2017-07-29',3,'Electronics and Communication Engineering','BTech',9439519465,'76, Deep Building, Kolkata');
-INSERT INTO students(user_id,roll_no,dob,yoa,year,dept,course,phone,address) VALUES (3,16800118012,'1997-05-04','2017-07-30',3,'Information Technology','BTech',9438248871,'M House, Tana Street, Chennai');
-INSERT INTO students(user_id,roll_no,dob,yoa,year,dept,course,phone,address) VALUES (4,16800116045,'1997-12-16','2016-07-23',4,'Electronics and Communication Engineering','BTech',9726228735,'A-5, Shalimar Road, Patna');
-INSERT INTO students(user_id,roll_no,dob,yoa,year,dept,course,phone,address) VALUES (5,16800119011,'1996-09-07','2018-08-01',2,'Computer Science and Engineering','MTech',9718029217,'J K Society, H Nagar, Kolkata');
+INSERT INTO students(user_id,roll_no,card_id,dob,yoa,year,dept,course,phone,address,total_fine,remarks,total_items) VALUES (1,16800116001,'CSE2016S','1997-02-15','2016-07-28',4,'CSE','BTech',9415431999,'H.D Road, Delhi',0,NULL,2);
+INSERT INTO students(user_id,roll_no,card_id,dob,yoa,year,dept,course,phone,address,total_fine,remarks,total_items) VALUES (2,16800117023,'ECE2017S','1998-04-03','2017-07-29',3,'ECE','BTech',9212110880,'76, Deep Building, Kolkata',50,NULL,4);
+INSERT INTO students(user_id,roll_no,card_id,dob,yoa,year,dept,course,phone,address,total_fine,remarks,total_items) VALUES (3,16800118012,'IT2017S','1997-05-04','2017-07-30',3,'IT','BTech',9119574842,'M House, Tana Street, Chennai',105.8,'Not a sincere person',6);
+INSERT INTO students(user_id,roll_no,card_id,dob,yoa,year,dept,course,phone,address,total_fine,remarks,total_items) VALUES (4,16800116045,'ECE2016S','1997-12-16','2016-07-23',4,'ECE','BTech',9274287989,'A-5, Shalimar Road, Patna',80.3,NULL,1);
+INSERT INTO students(user_id,roll_no,card_id,dob,yoa,year,dept,course,phone,address,total_fine,remarks,total_items) VALUES (5,16800119011,'CSE2018S','1996-09-07','2018-08-01',2,'CSE','MTech',9917151180,'J K Society, H Nagar, Kolkata',0,NULL,0);
+
 
 /* 
 -------------------------------------------
@@ -35,11 +36,12 @@ INSERT INTO students(user_id,roll_no,dob,yoa,year,dept,course,phone,address) VAL
 -------------------------------------------
 */
 
-INSERT INTO teachers(user_id,dob,yoap,dept,phone,address) VALUES (6,'1994-10-03','2016-07-27','Computer Science and Engineering',8119745402,'90, R J Nagar, Delhi');
-INSERT INTO teachers(user_id,dob,yoap,dept,phone,address) VALUES (7,'1994-07-12','2015-11-04','Electronics and Communication Engineering',9381273596,'H 186/3, P Street, Kolkata');
-INSERT INTO teachers(user_id,dob,yoap,dept,phone,address) VALUES (8,'1995-03-02','2015-10-20','Computer Science and Engineering',9122513511,'31/1, M.S Lane, Bangalore');
-INSERT INTO teachers(user_id,dob,yoap,dept,phone,address) VALUES (9,'1995-02-04','2016-05-17','Mechanical Engineering',8441701930,'109, Kaked East, Kolkata');
-INSERT INTO teachers(user_id,dob,yoap,dept,phone,address) VALUES (10,'1995-07-24','2016-08-03','Information Technology',9933399459,'A-134, S. K Nagar, Kolkata');
+INSERT INTO teachers(user_id,card_id,dob,yoap,dept,phone,address,total_fine,remarks,total_items) VALUES (6,'CSE2016T','1994-10-03','2016-07-27','CSE',8512383597,'90, R J Nagar, Delhi',0,NULL,3);
+INSERT INTO teachers(user_id,card_id,dob,yoap,dept,phone,address,total_fine,remarks,total_items) VALUES (7,'ECE2015T','1994-07-12','2015-11-04','ECE',8968084849,'H 186/3, P Street, Kolkata',0,NULL,6);
+INSERT INTO teachers(user_id,card_id,dob,yoap,dept,phone,address,total_fine,remarks,total_items) VALUES (8,'CSE2015T','1995-03-02','2015-10-20','CSE',8212661339,'31/1, M.S Lane, Bangalore',50,NULL,2);
+INSERT INTO teachers(user_id,card_id,dob,yoap,dept,phone,address,total_fine,remarks,total_items) VALUES (9,'ME2016T','1995-02-04','2016-05-17','ME',9184217596,'109, Kaked East, Kolkata',12,NULL,8);
+INSERT INTO teachers(user_id,card_id,dob,yoap,dept,phone,address,total_fine,remarks,total_items) VALUES (10,'IT2016T','1995-07-24','2016-08-03','IT',8218911103,'A-134, S. K Nagar, Kolkata',0,NULL,5);
+
 
 
 /* 
