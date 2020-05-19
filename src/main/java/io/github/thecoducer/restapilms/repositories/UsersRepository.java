@@ -11,6 +11,7 @@ import io.github.thecoducer.restapilms.models.Users;
 
 @Repository
 public interface UsersRepository extends JpaRepository<Users, Integer>{
+	
 	Optional<Users> findByUserName(String userName);
 	Optional<Users> findByEmail(String email);
 	

@@ -4,7 +4,11 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
@@ -12,8 +16,9 @@ import javax.persistence.Table;
 public class Users {
 	
 	@Id
-	@Column(name = "user_id")
-	private int userId;
+	@OneToOne(fetch = FetchType.LAZY)
+	@PrimaryKeyJoinColumn(name = "user")
+	private Students student;
 	
 	@Column(name = "username")
 	private String userName;
@@ -38,13 +43,13 @@ public class Users {
 	private boolean enabled;
 	
 
-	public int getUserId() {
-		return userId;
-	}
-
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
+//	public int getUserId() {
+//		return userId;
+//	}
+//
+//	public void setUserId(int userId) {
+//		this.userId = userId;
+//	}
 
 	public String getUserName() {
 		return userName;
@@ -102,11 +107,11 @@ public class Users {
 		this.enabled = enabled;
 	}
 
-	@Override
-	public String toString() {
-		return "Users [userId=" + userId + ", userName=" + userName + ", email=" + email + ", password=" + password
-				+ ", fullName=" + fullName + ", createdAt=" + createdAt + ", authority=" + authority + ", enabled="
-				+ enabled + "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "Users [userId=" + userId + ", userName=" + userName + ", email=" + email + ", password=" + password
+//				+ ", fullName=" + fullName + ", createdAt=" + createdAt + ", authority=" + authority + ", enabled="
+//				+ enabled + "]";
+//	}
 	
 }

@@ -45,9 +45,16 @@ public class UserController {
 		return token.getToken();
 	}
 	
-	@RequestMapping(method = RequestMethod.POST, value = "/register")
-	public ResponseEntity<Map<String, String>> createNewUser(@RequestBody NewUser newUser) {
-		return userService.createNewUser(newUser);
+	@PostMapping("/register/student")
+	@ApiOperation(value = "Create a new student account")
+	public ResponseEntity<Map<String, String>> createNewStudent(@RequestBody NewStudent newStudent) {
+		return userService.createNewStudent(newStudent);
+	}
+	
+	@PostMapping("/register/teacher")
+	@ApiOperation(value = "Create a new teacher account")
+	public ResponseEntity<Map<String, String>> createNewTeacher(@RequestBody NewTeacher newTeacher) {
+		return userService.createNewTeacher(newTeacher);
 	}
 	
 }

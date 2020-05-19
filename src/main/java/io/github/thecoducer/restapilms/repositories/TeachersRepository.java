@@ -1,5 +1,8 @@
 package io.github.thecoducer.restapilms.repositories;
 
-public class TeachersRepository {
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class TeachersRepository extends {
 
 }
