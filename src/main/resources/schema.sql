@@ -19,13 +19,13 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `fname` varchar(255) NOT NULL,
   `created_at` datetime NOT NULL,
-  `authority` ENUM ('ROLE_STUDENT', 'ROLE_TEACHER', 'ROLE_LIBRARIAN') NOT NULL,
+  `authority` ENUM ('ROLE_STUDENT', 'ROLE_TEACHER', 'ROLE_LIBRARIAN', 'ROLE_ADMIN') NOT NULL,
   `enabled` boolean NOT NULL DEFAULT true
 );
 
 CREATE TABLE `students` (
-  `user_id` int,
-  `roll_no` bigint PRIMARY KEY,
+  `user_id` int PRIMARY KEY,
+  `roll_no` bigint UNIQUE,
   `card_id` varchar(255),
   `dob` date,
   `yoa` date,
@@ -40,8 +40,8 @@ CREATE TABLE `students` (
 );
 
 CREATE TABLE `teachers` (
-  `user_id` int,
-  `tid` int PRIMARY KEY AUTO_INCREMENT,
+  `user_id` int PRIMARY KEY,
+  `tid` int UNIQUE AUTO_INCREMENT,
   `card_id` varchar(255),
   `dob` date,
   `yoap` date,
@@ -59,8 +59,8 @@ CREATE TABLE `items` (
 );
 
 CREATE TABLE `books` (
-  `item_id` int,
-  `isbn` bigint PRIMARY KEY,
+  `item_id` int PRIMARY KEY,
+  `isbn` bigint UNIQUE,
   `title` varchar(255),
   `category` varchar(255),
   `pub_date` date,
@@ -72,15 +72,15 @@ CREATE TABLE `books` (
 
 CREATE TABLE `authors` (
   `author_id` int PRIMARY KEY AUTO_INCREMENT,
-  `isbn` bigint,
+  `isbn` bigint UNIQUE,
   `name1` varchar(255) NOT NULL,
-  `name2` varchar(255) DEFAULT NULL,
-  `name3` varchar(255) DEFAULT NULL
+  `name2` varchar(255) DEFAULT null,
+  `name3` varchar(255) DEFAULT null
 );
 
 CREATE TABLE `periodicals` (
-  `item_id` int,
-  `issn` bigint PRIMARY KEY,
+  `item_id` int PRIMARY KEY,
+  `issn` bigint UNIQUE,
   `title` varchar(255),
   `type` varchar(255),
   `category` varchar(255),
