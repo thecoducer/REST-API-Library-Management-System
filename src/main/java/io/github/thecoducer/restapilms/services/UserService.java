@@ -27,6 +27,8 @@ public class UserService {
 
 	public ResponseEntity<Map<String, String>> createNewUser(NewUser newUser) {
 		
+		System.out.println("New User: " + newUser);
+		
 		Map<String, String> response = new TreeMap<String, String>();
 		
 		String userName = newUser.getUserName();
@@ -34,6 +36,12 @@ public class UserService {
 		String email = newUser.getEmail();
 		String password = newUser.getPassword();
 		String authority = newUser.getAuthority();
+		
+		// check if fields are blank or not
+		if(userName.isEmpty() || fullName.isEmpty() || email.isEmpty() || password.isEmpty()) {
+			response.put("message", "One or more fields are empty.");
+			return new ResponseEntity<Map<String,String>>(response, HttpStatus.BAD_REQUEST);
+		}
 		
 		// if email address already exists
 		if(usersRepository.findByEmail(email).isEmpty() == false) {
